@@ -21,20 +21,21 @@
         h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;}
         button, .highlight {font-family: 'Roboto', sans-serif;}
         .control-btn{background-color:var(--secondary);border-color:var(--primary)}
-        #side-bar-btn{background-color:var(--secondary)}
         #dashboard-container{height:100vh;width:100vw;}
         #map{height:100%;width:100%;}
         #side-bar-btn{position:absolute;z-index:1000;right:0;top:.5em;
             border-top-right-radius:0;border-bottom-right-radius: 0;
             border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;}
+            border-bottom-left-radius: 10px;
+            background-color:var(--neutral1);border-color:var(--neutral1);
+        }
     </style>
 </head>
 <body>
     <div class="row" id="dashboard-container">
         <div id="map-container" class="col-md-9">
             <div id="map">
-                <button id="side-bar-btn" type="button" class="btn btn-secondary" onclick="fullScreen()"><i class="bi bi-list"></i></button>
+                <button id="side-bar-btn" type="button" class="btn" onclick="fullScreen()"><i class="bi bi-caret-right-fill"></i></button>
             </div>
         </div>
         <div id="bar-container" class="col-md-3">
@@ -47,7 +48,7 @@
                     <button type="button" class="btn btn-primary control-btn" onclick="goHome()"><i class="bi bi-house-door-fill"></i></button>
                     <button type="button" class="btn btn-primary control-btn"><i class="bi bi-geo-alt-fill"></i></button>
                     <button type="button" class="btn btn-primary control-btn"><i class="bi bi-pie-chart-fill"></i></button>
-                    <button type="button" class="btn btn-primary control-btn"><i class="bi bi-crosshair2"></i></button>
+                    <button type="button" class="btn btn-primary control-btn" onclick="goGeolocate()"><i class="bi bi-crosshair2"></i></button>
                 </div>
                 <div class="col-12"><hr></div>
                 <div class="col-12">
