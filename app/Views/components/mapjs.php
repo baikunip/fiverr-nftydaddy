@@ -28,7 +28,27 @@
                     alert('A geolocate event has occurred.')
                 })
             })
+        },
+        goToPoint=(x,y)=>{
+            map.flyTo({
+                center: [x,y],zoom: 16
+            })
         }
+        // populate real estate list
+        datasample.features.forEach(el => {
+            let childEl=`<button onclick="goToPoint(`+el.properties.Longitude+`,`+el.properties.Latitude+`)" class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="row">
+                                <div class="col-3"><img src="`+el.properties.Cover+`" class="card-img-top" alt="..."></div>
+                                <div class="col-9"><div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">`+el.properties.Title+`</h5>
+                                    <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small></div>
+                            </div>     
+                        </button>`
+            document.getElementById('real-estate-list').insertAdjacentHTML( 'beforeend', childEl );
+        });
         // draw the map
         let map = new maplibregl.Map({
             container: 'map',

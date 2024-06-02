@@ -10,6 +10,24 @@
     <?php echo view("components/mapstyle"); ?>
 </head>
 <body>
+    <!-- Info Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+        </div>
+    </div>
+    </div>
     <div class="row" id="dashboard-container">
         <div id="map-container" class="col-md-9">
             <div id="map">
@@ -33,17 +51,6 @@
                 <div class="col-12">
                     <h4>List of Real Estate</h4>
                     <div id="real-estate-list" class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                            <div class="row">
-                                <div class="col-2"><img src="..." class="card-img-top" alt="..."></div>
-                                <div class="col-10"><div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">List group item heading</h5>
-                                    <small>3 days ago</small>
-                                </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small></div>
-                            </div>     
-                        </a>
                     </div>
                 </div>
             </div>
