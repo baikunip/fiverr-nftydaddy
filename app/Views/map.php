@@ -7,29 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        :root {
-            --primary: #2C3E50;
-            --secondary: #1ABC9C;
-            --neutral1:#ECF0F1;
-            --neutral2:#7F8C8D;
-            --accent1:#F39C12;
-            --accent2:#27AE60;
-            --complementary:#8E44AD;
-        }
-        body{background-color:var(--neutral1);font-family: 'Lato', sans-serif;}
-        h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;}
-        button, .highlight {font-family: 'Roboto', sans-serif;}
-        .control-btn{background-color:var(--secondary);border-color:var(--primary)}
-        #dashboard-container{height:100vh;width:100vw;}
-        #map{height:100%;width:100%;}
-        #side-bar-btn{position:absolute;z-index:1000;right:0;top:.5em;
-            border-top-right-radius:0;border-bottom-right-radius: 0;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            background-color:var(--neutral1);border-color:var(--neutral1);
-        }
-    </style>
+    <?php echo view("components/mapstyle"); ?>
 </head>
 <body>
     <div class="row" id="dashboard-container">
@@ -44,7 +22,8 @@
                     <h1>Maps Logo</h1>
                 </div>
                 <div class="col-12"><hr></div>
-                <div class="col-12 btn-group" role="group" aria-label="Basic example">
+                <div class="col-12"><h4>Map Panel Control</h4></div>
+                <div class="col-12 btn-group mb-4" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary control-btn" onclick="goHome()"><i class="bi bi-house-door-fill"></i></button>
                     <button type="button" class="btn btn-primary control-btn"><i class="bi bi-geo-alt-fill"></i></button>
                     <button type="button" class="btn btn-primary control-btn"><i class="bi bi-pie-chart-fill"></i></button>
@@ -52,7 +31,20 @@
                 </div>
                 <div class="col-12"><hr></div>
                 <div class="col-12">
-                    This is real estate list
+                    <h4>List of Real Estate</h4>
+                    <div id="real-estate-list" class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="row">
+                                <div class="col-2"><img src="..." class="card-img-top" alt="..."></div>
+                                <div class="col-10"><div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">List group item heading</h5>
+                                    <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small></div>
+                            </div>     
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

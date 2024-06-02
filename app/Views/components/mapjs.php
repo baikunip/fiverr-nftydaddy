@@ -29,6 +29,7 @@
                 })
             })
         }
+        // draw the map
         let map = new maplibregl.Map({
             container: 'map',
             center: [115.14083969067292,-8.393090919502285],
@@ -58,5 +59,23 @@
             },
             trackUserLocation: true
         })
-        map.addControl(geolocate);
+        map.addControl(geolocate)
+        // map on load function
+        map.on('load', () => {
+            map.addSource('real-estate', {
+                'type': 'geojson',
+                'data': datasample
+            })
+            map.addLayer({
+                'id': 'lyr-real-estate',
+                'type': 'circle',
+                'source': 'real-estate',
+                "paint": {
+                    "circle-radius": 6,
+                    "circle-color": '#1ABC9C',
+                    "circle-stroke-width": .5,
+                    "circle-stroke-color":'#2C3E50'
+                }
+            })
+        })
  </script>
